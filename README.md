@@ -179,3 +179,203 @@
 
 ```
 
+> ### Funciones primitivas de CLISP 
+ 
+#### Funciones Matemáticas
+
+- `expt`  
+  Eleva un número a una potencia.  
+  Ejemplo:
+  ```lisp
+  (expt 2 3)  ; 8
+  ```
+
+- `sqrt`  
+  Devuelve la raíz cuadrada de un número.  
+  Ejemplo:
+  ```lisp
+  (sqrt 9)  ; 3
+  ```
+
+- `mod`  
+  Resto de una división.  
+  Ejemplo:
+  ```lisp
+  (mod 5 3)  ; 2
+  ```
+
+#### Funciones Lógicas
+
+- `and`  
+  Devuelve `T` (verdadero) si todos los argumentos son verdaderos.  
+  Ejemplo:
+  ```lisp
+  (and t nil)  ; nil
+  ```
+
+- `or`  
+  Devuelve `T` si alguno de los argumentos es verdadero.  
+  Ejemplo:
+  ```lisp
+  (or nil t)  ; t
+  ```
+
+- `not`  
+  Devuelve el valor contrario de un booleano.  
+  Ejemplo:
+  ```lisp
+  (not nil)  ; t
+  ```
+
+- `zerop`  
+  Verifica si el número es cero.  
+  Ejemplo:
+  ```lisp
+  (zerop 0)  ; t
+  ```
+
+- `evenp`  
+  Verifica si el número es par.  
+  Ejemplo:
+  ```lisp
+  (evenp 4)  ; t
+  ```
+
+- `oddp`  
+  Verifica si el número es impar.  
+  Ejemplo:
+  ```lisp
+  (oddp 3)  ; t
+  ```
+
+#### Funciones de Control de Flujo
+
+- `if`  
+  Estructura condicional.  
+  Ejemplo:
+  ```lisp
+  (if (> 2 1) 'greater 'lesser)  ; greater
+  ```
+
+- `cond`  
+  Estructura condicional con múltiples condiciones.  
+  Ejemplo:
+  ```lisp
+  (cond ((> 2 3) 'too-large)
+        ((> 2 1) 'greater)
+        (t 'lesser))
+  ```
+
+- `when`  
+  Una forma corta de `if` para condiciones verdaderas.  
+  Ejemplo:
+  ```lisp
+  (when (> 2 1) (print "True"))
+  ```
+
+- `loop`  
+  Estructura de bucle.  
+  Ejemplo:
+  ```lisp
+  (loop for i from 1 to 5 do (print i))
+  ```
+
+#### Funciones de Manejo de Listas
+
+- `car`  
+  Devuelve el primer elemento de una lista.  
+  Ejemplo:
+  ```lisp
+  (car '(1 2 3))  ; 1
+  ```
+
+- `cdr`  
+  Devuelve la lista sin el primer elemento.  
+  Ejemplo:
+  ```lisp
+  (cdr '(1 2 3))  ; (2 3)
+  ```
+
+- `cons`  
+  Crea una nueva lista a partir de un elemento y una lista.  
+  Ejemplo:
+  ```lisp
+  (cons 1 '(2 3))  ; (1 2 3)
+  ```
+
+- `list`  
+  Crea una lista a partir de los elementos dados.  
+  Ejemplo:
+  ```lisp
+  (list 1 2 3)  ; (1 2 3)
+  ```
+
+- `length`  
+  Devuelve la longitud de una lista.  
+  Ejemplo:
+  ```lisp
+  (length '(1 2 3))  ; 3
+  ```
+
+- `append`  
+  Combina dos o más listas.  
+  Ejemplo:
+  ```lisp
+  (append '(1 2) '(3 4))  ; (1 2 3 4)
+  ```
+
+#### Funciones de Manejo de Símbolos y Variables
+
+- `setq`  
+  Asigna un valor a una variable.  
+  Ejemplo:
+  ```lisp
+  (setq x 10)
+  ```
+
+- `defvar`  
+  Define una variable global.  
+  Ejemplo:
+  ```lisp
+  (defvar y 20)
+  ```
+
+- `let`  
+  Define variables locales dentro de un bloque de código.  
+  Ejemplo:
+  ```lisp
+  (let ((x 10) (y 20))
+    (+ x y))  ; 30
+  ```
+
+- `symbolp`  
+  Verifica si un objeto es un símbolo.  
+  Ejemplo:
+  ```lisp
+  (symbolp 'x)  ; t
+  ```
+
+#### Funciones de Entrada/Salida
+
+- `princ`  
+  Imprime un valor sin salto de línea.  
+  Ejemplo:
+  ```lisp
+  (princ "Hello, World!")  ; Imprime sin salto de línea
+  ```
+
+- `print`  
+  Imprime un valor con salto de línea.  
+  Ejemplo:
+  ```lisp
+  (print "Hello, World!")  ; Imprime con salto de línea
+  ```
+
+- `read`  
+  Lee una expresión del input estándar.  
+  Ejemplo:
+  ```lisp
+  (setq x (read))  ; Lee una entrada
+  ```
+
+
