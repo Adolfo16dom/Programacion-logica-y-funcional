@@ -52,30 +52,59 @@
 (princ c)   
 )
 ``` 
+### Cálculo de Áreas
+
+Para calcular el área de un cuadrado, definí la función area_cuadrado, que recibe el lado como parámetro. Multiplico el valor del lado por sí mismo y lo almaceno en la variable c con set. Finalmente, utilizo princ para imprimir el resultado.
+
+El cálculo del área de un rectángulo se hace en la función area_rectangulo, donde recibo la base y la altura como parámetros. Multiplico estos valores y almaceno el resultado en c, que posteriormente se imprime.
+
+Para el triángulo, utilizo la función area_triangulo, que también recibe base y altura, pero en este caso, divido el producto de ambos entre 2.0. A diferencia de otras funciones, aquí no utilizo setq ni princ, simplemente retorno el resultado directamente.
+
+El área del círculo se calcula en area_circulo, donde recibo el radio, lo elevo al cuadrado y lo multiplico por 3.1416, una aproximación de π. Guardo este resultado en c y lo imprimo.
+
+Finalmente, para calcular el área de un trapecio, uso la función area_trapecio, que recibe las bases b1 y b2, además de la altura. Primero sumo ambas bases, luego multiplico por la altura y divido entre 2. El resultado se almacena en c y se imprime.
+
+### Cálculo de Volúmenes
+
+En cuanto a los volúmenes, la función vol_cubo calcula el volumen de un cubo recibiendo el lado como parámetro. Para obtener el resultado, elevo el lado al cubo y lo almaceno en c, que luego imprimo con princ.
+
+Para calcular el volumen de un prisma rectangular, utilizo vol_prisma_rectangular, donde recibo la base, la altura y el ancho. Multiplico estos valores y los almaceno en c antes de imprimir el resultado.
+
+El volumen del cilindro se obtiene en vol_cilindro, donde recibo el radio y la altura. Elevo el radio al cuadrado, lo multiplico por la altura y por 3.1416. El resultado se guarda en c y se imprime.
+
+La función vol_esfera calcula el volumen de una esfera recibiendo el radio como parámetro. Elevo el radio al cubo, multiplico por 4 * π y luego divido entre 3. Finalmente, almaceno el resultado en c y lo imprimo.
+
+Por último, para calcular el volumen de una pirámide, utilizo vol_piramide, que recibe la base y la altura. Multiplico ambos valores y divido entre 3, almacenando el resultado en c antes de imprimirlo.
+
 
 > ### Adivinar el número 
 ```Lisp
 (defun guess-my-number ()
-(ash (+ *small* *big*) -1)
-
-)
+(ash (+ *small* *big*) -1))
 
 (defun smaller()
 (setf *big* (1- (guess-my-number)))
-(guess-my-number)
-)
+(guess-my-number))
 
 (defun bigger ()
 (setf *small* (1+ (guess-my-number)))
-(guess-my-number)
-)
+(guess-my-number))
 
 (defun start-over ()
 (defparameter *small* 1)
 (defparameter *big* 100)
-(guess-my-number)
-)
+(guess-my-number))
 ```
+
+La función guess-my-number calcula la suposición de la computadora basándose en el rango actual de búsqueda. Se suman los valores small y big y los divido por 2 usando la función ash con -1, lo que equivale a hacer un desplazamiento aritmético a la derecha es decir, dividir por 2. De esta manera, siempre tomo el punto medio del rango actual como la siguiente suposición.
+
+La función smaller actualiza big para que sea uno menos que la suposición actual (guess-my-number). Esto significa que descarto la mitad superior del rango y me concentro en la mitad inferior. Luego, llamo nuevamente a guess-my-number para hacer una nueva suposición.
+
+La función bigger aumento small en 1, lo que significa que descarto la mitad inferior del rango y continúo buscando en la mitad superior. Luego, llamo nuevamente a guess-my-number para hacer la siguiente suposición.
+
+Esta función start-over reinicia el juego, estableciendo un nuevo rango de búsqueda de 1 a 100. Primero, se define small como 1 y big como 100, lo que significa que el número a adivinar debe estar en ese rango. Luego, llamo a guess-my-number para que la computadora haga su primera suposición con estos valores iniciales.
+
+
 
 > ### Funciones para sacar el factorial y fibonnaci
 ```Lisp
@@ -92,6 +121,10 @@
 
 )
 ```
+La función facto(x) calcula el factorial de un número de manera recursiva. Si el valor de x es 0, la función devuelve 1 como caso base, ya que el factorial de 0 es 1. En cualquier otro caso, la función multiplica x por la llamada recursiva facto(x - 1), reduciendo el valor de x hasta que alcance 0. De esta manera, los valores se van multiplicando al regresar en la recursión, obteniendo finalmente el factorial del número dado.
+
+Por otro lado, la función fibo(x) calcula el número de Fibonacci en la posición x utilizando una estructura recursiva. Si x es menor que 2, retorna 1 como caso base, ya que los dos primeros números de Fibonacci son 1. En cualquier otro caso, la función suma fibo(x - 1) + fibo(x - 2), llamándose a sí misma recursivamente para obtener los dos valores anteriores en la serie. Por ejemplo, si llamamos a fibo(5), la función descompone el problema en fibo(4) + fibo(3), y a su vez cada uno de estos valores se desglosa hasta alcanzar los casos base.
+
 > ### Funciones (Potencias con sumas y divisiones con restas)
 ```Lisp
 ;;Potencias con sumas
@@ -114,6 +147,9 @@
     )
 ) 
 ```
+La función potencia_suma(base, exponente) calcula la potencia de un número utilizando puras sumas. Si el exponente es 0, la función retorna 1, ya que cualquier número elevado a la potencia de 0 es 1. En cualquier otro caso, la función multiplica la base por el resultado de potencia_suma(base, exponente - 1), reduciendo el exponente hasta alcanzar el caso base. Sin embargo, en lugar de utilizar la multiplicación directa, usa la función multiplicar(a, b), la cual se basa en sumas repetitivas para calcular el producto de dos números. Esta última función verifica si b es 0 y, de ser así, retorna 0 como caso base. Si b es mayor que 0, suma a a la llamada recursiva multiplicar(a, b - 1), lo que significa que se va sumando a tantas veces como indique b.
+
+Por otro lado, la función division_resta(dividendo, divisor) realiza la división de manera recursiva utilizando restas sucesivas. Si el dividendo es menor que el divisor, significa que no se puede seguir restando, por lo que retorna 0 como caso base, indicando que la división ha terminado. En cualquier otro caso, la función resta el divisor del dividendo y suma 1 a la llamada recursiva division_resta(dividendo - divisor, divisor), representando así el número de veces que el divisor cabe dentro del dividendo.
 
 > ### Ejercicios con car y cdr
 ```Lisp
