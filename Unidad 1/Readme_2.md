@@ -90,7 +90,7 @@ Con mapcar recorro la lista *nodos* y aplico la función car a cada sublista par
 
 Ejemplo 1: (mapcar #'car *nodos *)
 
-Ejemplo 2: (recor *nodos*)
+Ejemplo 2: (recor *nodos *)
 ```Lisp
 (defparameter *nodos* 
     '((clashRoyale 
