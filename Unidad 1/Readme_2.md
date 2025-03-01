@@ -86,9 +86,11 @@ Ejemplo para usar la función:
     (t (format t "No puedes entrar sin un regalo.~%"))))
 ```
 > ###  Ejercicio con defparameter
-Con mapcar recorro la lista *nodos* y aplico la función car a cada sublista para solo mostrar los puros nombres de los videojuegos.
+Con mapcar recorro la lista *nodos* y aplico la función car a cada sublista para solo mostrar los puros nombres de los videojuegos o tambien con la funcion *recor* puedo mostrar los primeros elementos de cada rama.
 
-Ejemplo: (mapcar #'car *nodos *)
+Ejemplo 1: (mapcar #'car *nodos *)
+
+Ejemplo 2: (recor *nodos*)
 ```Lisp
 (defparameter *nodos* 
     '((clashRoyale 
@@ -106,4 +108,11 @@ Ejemplo: (mapcar #'car *nodos *)
     (halo 
     (masterchief cortana arbiter))
     ))
+
+(defun recor(lista)
+    (format t "El juego es: ~a"(caar lista)) 
+    (if lista 
+    (recor (cdr lista))
+    )
+)
 ```
