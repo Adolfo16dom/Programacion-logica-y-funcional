@@ -5,7 +5,7 @@
 
 3. La función **ultimo-elemento** utiliza recursión para recorrer la lista hasta encontrar el último elemento. Si la lista está vacía, devuelve *nil*. Si *cdr lista* es *nil*, significa que solo queda un elemento en la lista, por lo que lo retorna con *car lista*. En caso contrario, sigue llamándose recursivamente con *cdr lista* hasta encontrar el último elemento.
 
-4. La función **longitud-lista** calcula la cantidad de elementos en una lista de manera recursiva. Si la lista está vacía, devuelve *0*. Si no, suma `1` al resultado de llamar a *longitud-lista* sobre *cdr lista*, lo que va reduciendo la lista hasta que sea vacía, acumulando el número total de elementos en la pila de llamadas.
+4. La función **longitud-lista** calcula la cantidad de elementos en una lista de manera recursiva. Si la lista está vacía, devuelve *0*. Si no, suma *1* al resultado de llamar a *longitud-lista* sobre *cdr lista*, lo que va reduciendo la lista hasta que sea vacía, acumulando el número total de elementos en la pila de llamadas.
 
 5. La función **suma-lista** devuelve la suma de todos los elementos de una lista de números. Si la lista está vacía, devuelve *0*. Si no, usa *car* para obtener el primer número y lo suma al resultado de la llamada recursiva a *suma-lista* con *cdr lista*, lo que reduce la lista hasta que todos los elementos han sido sumados.
 
