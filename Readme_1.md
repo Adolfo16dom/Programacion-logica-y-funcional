@@ -1,5 +1,4 @@
 # PROGRAMACIÓN LÓGICA Y FUNCINAL 
-## UNIDAD 1
 
 > ### Funciones de areas y volumenes 
 ```Lisp
