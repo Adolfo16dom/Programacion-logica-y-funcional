@@ -158,4 +158,5 @@ nieto(X, Y)  :- (padrede(Z, X); madrede(Z, X)), (padrede(Y, Z); madrede(Y, Z)).
 sobrino(X, Y):- (padrede(Z, X); madrede(Z, X)), hermano(Z, Y), Z \=Y. 
 
 cunada(X, Y) :- esposa(X, Z), hermano(Z, Y), Z \=Y.
+
 ```
