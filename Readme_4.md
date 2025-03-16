@@ -25,7 +25,33 @@ Colocar 4 reinas en un tablero de ajedrez de 4x4 de manera que ninguna se ataque
 Mover un caballito por todo un tablero de ajedrez de 8x8 de manera que pase por todos los 64 puntos del tablero exactamente una vez.
 
 ![Ejercicios de preorden y postorden](imagenes/imagen_7.jpeg)
+---
 
+### Ejercicio 4
+En una calle hay cinco casas, cada una de un color distinto.  En cada casa vive una persona de distinta nacionalidad.  Cada dueño bebe un único tipo de bebida, fuma una sola marca de cigarrillos y tiene una mascota diferente a sus vecinos.  A partir de las 15 pistas presentadas a continuación, la consigna que hay que responder es: "¿Quién es el dueño del pez?".
+ 
+- El noruego vive en la primera casa.
+- El noruego vive al lado de la casa azul.
+- La casa verde está a la izquierda de la blanca.
+- El dueño de la casa verde bebe café.
+- El que vive en la casa del centro bebe leche.
+![Ejercicios de preorden y postorden](imagenes/imagen_8.jpeg)
+
+- El británico vive en la casa roja.
+![Ejercicios de preorden y postorden](imagenes/imagen_9.jpeg)
+
+- La casa amarilla fuma Dunhill.
+![Ejercicios de preorden y postorden](imagenes/imagen_10.jpeg)
+
+- El sueco tiene un perro como mascota.
+- El alemán fuma Prince.
+- El sueco tiene un perro.
+- El danés toma té.
+- El que fuma Pall Mall cría pájaros.
+- El que fuma Bluemaster toma cerveza.
+- El que fuma Blends vive junto al que tiene gato.
+- El que fuma Blends también vive junto al que toma agua.
+![Ejercicios de preorden y postorden](imagenes/imagen_11.jpeg)
 > ### Enunciados de programación lógica 
 ### Obtener:
 
